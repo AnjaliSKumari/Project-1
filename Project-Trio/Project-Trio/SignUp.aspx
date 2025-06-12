@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="Project_Trio.SignUp" %>
+﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="Project_Trio.SignUp" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">
