@@ -1,26 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\",
+  "WorkspaceRootPath": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|c:\\users\\e40096633\\source\\project-1\\project-trio\\project-trio\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|c:\\users\\e40098016\\onedrive - rtx\\project-1\\project-trio\\project-trio\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|c:\\users\\e40096633\\source\\project-1\\project-trio\\project-trio\\signup.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\signup.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\ProfilePage.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Project-Trio\\ProfilePage.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|c:\\users\\e40096633\\source\\project-1\\project-trio\\project-trio\\signup.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\signup.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|c:\\users\\e40098016\\onedrive - rtx\\project-1\\project-trio\\project-trio\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|c:\\users\\e40096633\\source\\project-1\\project-trio\\project-trio\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\project-trio\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|c:\\users\\e40096633\\source\\project-1\\project-trio\\project-trio\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\project-trio\\signup.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\signup.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\project-trio\\signup.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\signup.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Use.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Project-Trio\\Use.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,35 +38,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SignUp.aspx",
-              "DocumentMoniker": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\SignUp.aspx",
-              "RelativeDocumentMoniker": "Project-Trio\\SignUp.aspx",
-              "ToolTip": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\SignUp.aspx",
-              "RelativeToolTip": "Project-Trio\\SignUp.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-05-29T10:30:54.606Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SignUp.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\SignUp.aspx.cs",
-              "RelativeDocumentMoniker": "Project-Trio\\SignUp.aspx.cs",
-              "ToolTip": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\SignUp.aspx.cs",
-              "RelativeToolTip": "Project-Trio\\SignUp.aspx.cs",
-              "ViewState": "AgIAAIIAAAAAAAAAAAAkwFgAAABRAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T10:32:27.079Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",
@@ -66,41 +50,89 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Login.aspx",
-              "DocumentMoniker": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\Login.aspx",
-              "RelativeDocumentMoniker": "Project-Trio\\Login.aspx",
-              "ToolTip": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\Login.aspx",
-              "RelativeToolTip": "Project-Trio\\Login.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-05-29T12:31:18.25Z",
+              "DocumentIndex": 0,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Web.config",
+              "RelativeDocumentMoniker": "Project-Trio\\Web.config",
+              "ToolTip": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Web.config",
+              "RelativeToolTip": "Project-Trio\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-06-04T09:45:50.361Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Web.config",
-              "DocumentMoniker": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\Web.config",
-              "RelativeDocumentMoniker": "Project-Trio\\Web.config",
-              "ToolTip": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\Web.config",
-              "RelativeToolTip": "Project-Trio\\Web.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-05-29T12:09:40.59Z",
+              "Title": "SignUp.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\SignUp.aspx.cs",
+              "RelativeDocumentMoniker": "Project-Trio\\SignUp.aspx.cs",
+              "ToolTip": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\SignUp.aspx.cs",
+              "RelativeToolTip": "Project-Trio\\SignUp.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T07:26:47.596Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SignUp.aspx",
+              "DocumentMoniker": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\SignUp.aspx",
+              "RelativeDocumentMoniker": "Project-Trio\\SignUp.aspx",
+              "ToolTip": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\SignUp.aspx",
+              "RelativeToolTip": "Project-Trio\\SignUp.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-04T07:26:37.624Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Login.aspx",
+              "DocumentMoniker": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Login.aspx",
+              "RelativeDocumentMoniker": "Project-Trio\\Login.aspx",
+              "ToolTip": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Login.aspx",
+              "RelativeToolTip": "Project-Trio\\Login.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-04T07:08:36.357Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Use.aspx",
+              "DocumentMoniker": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Use.aspx",
+              "RelativeDocumentMoniker": "Project-Trio\\Use.aspx",
+              "ToolTip": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Use.aspx",
+              "RelativeToolTip": "Project-Trio\\Use.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-04T07:08:02.902Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProfilePage.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\ProfilePage.aspx.cs",
+              "RelativeDocumentMoniker": "Project-Trio\\ProfilePage.aspx.cs",
+              "ToolTip": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\ProfilePage.aspx.cs",
+              "RelativeToolTip": "Project-Trio\\ProfilePage.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T07:07:59.815Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "style.css",
-              "DocumentMoniker": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\style.css",
-              "RelativeDocumentMoniker": "Project-Trio\\style.css",
-              "ToolTip": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\style.css",
-              "RelativeToolTip": "Project-Trio\\style.css",
-              "ViewState": "AgIAABsBAAAAAAAAAAAAAKMBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-29T11:56:07.529Z",
+              "DocumentIndex": 2,
+              "Title": "Login.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Login.aspx.cs",
+              "RelativeDocumentMoniker": "Project-Trio\\Login.aspx.cs",
+              "ToolTip": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Login.aspx.cs",
+              "RelativeToolTip": "Project-Trio\\Login.aspx.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T16:32:40.002Z",
               "EditorCaption": ""
             }
           ]
