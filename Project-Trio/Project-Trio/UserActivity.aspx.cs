@@ -2,227 +2,338 @@
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Text.RegularExpressions;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
 
 namespace Project_Trio
 {
-    public partial class UserActivity : Page
+    public partial class UserActivity : System.Web.UI.Page
     {
-        string connStr = ConfigurationManager.ConnectionStrings["UserConn"].ConnectionString;
+        private string connectionString = ConfigurationManager.ConnectionStrings["UserConn"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Check if user is logged in
+            if (Session["UserId"] == null)
+            {
+                Response.Redirect("Login.aspx");
+                return;
+            }
+
+            // Set welcome username label
+            if (Session["Username"] != null)
+            {
+                lblUsername.Text = Session["Username"].ToString();
+            }
+            else
+            {
+                lblUsername.Text = "User";
+            }
+
             if (!IsPostBack)
             {
-                BindGrid();
+                LoadUsers();
             }
         }
 
-        private void BindGrid()
+
+        private void LoadUsers()
         {
-            using (SqlConnection conn = new SqlConnection(connStr))
+            try
             {
-                // Only show regular users (RoleId = 1), exclude admin users (RoleId = 2)
-                string sql = "SELECT Id, Username, Email, Gender, Password FROM UserDetails WHERE RoleId = 1";
-
-                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                // Add masked password column for display
-                dt.Columns.Add("EncryptedPassword", typeof(string));
-                foreach (DataRow row in dt.Rows)
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    string pwd = row["Password"].ToString();
-                    row["EncryptedPassword"] = MaskPassword(pwd);
-                }
+                    conn.Open();
 
-                gvUsers.DataSource = dt;
-                gvUsers.DataBind();
+                    // Load all users except admins (RoleId != 2) and order by Id
+                    string query = @"
+                        SELECT Id, Username, Email, Gender, CreatedAt 
+                        FROM UserDetails 
+                        WHERE RoleId != 2 
+                        ORDER BY Id";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    gvUsers.DataSource = dt;
+                    gvUsers.DataBind();
+                }
+            }
+            catch (Exception ex)
+            {
+                ShowMessage("Error loading users: " + ex.Message, true);
             }
         }
-
-        private string MaskPassword(string password)
+        protected void lnkLogout_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(password))
-                return "";
+            // Make sure to call ActivityTracker to mark the current page's exit before logging out
+            ActivityTracker.TrackCurrentPageExitOnSessionEnd();
 
-            if (password.Length <= 4)
-                return new string('*', password.Length);
-
-            return password.Substring(0, 2) + new string('*', password.Length - 4) + password.Substring(password.Length - 2);
+            Session.Clear();
+            Session.Abandon();
+            // Clear the session cookie as well
+            Response.Cookies["ASP.NET_SessionId"].Expires = DateTime.Now.AddDays(-1);
+            Response.Redirect("Login.aspx"); // Redirect to your login page
         }
 
         protected void gvUsers_RowEditing(object sender, GridViewEditEventArgs e)
         {
             gvUsers.EditIndex = e.NewEditIndex;
-            BindGrid();
+            LoadUsers();
+
+            // Set the dropdown value for gender
+            GridViewRow row = gvUsers.Rows[e.NewEditIndex];
+            DropDownList ddlGender = row.FindControl("ddlGender") as DropDownList;
+
+            if (ddlGender != null)
+            {
+                // Debugging: Check if Gender exists in DataKeys
+                var genderValue = gvUsers.DataKeys[e.NewEditIndex]["Gender"];
+                if (genderValue != null)
+                {
+                    string currentGender = genderValue.ToString();
+                    Console.WriteLine("Gender found in DataKeys: " + currentGender);
+                    if (!string.IsNullOrEmpty(currentGender))
+                    {
+                        ddlGender.SelectedValue = currentGender;
+                    }
+                    else
+                    {
+                        ddlGender.SelectedIndex = 0; // Set default value or leave empty
+                    }
+                }
+                else
+                {
+                    // Log if Gender is missing from DataKeys
+                    Console.WriteLine("Gender not found in DataKeys at index " + e.NewEditIndex);
+                }
+            }
         }
 
         protected void gvUsers_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             gvUsers.EditIndex = -1;
-            BindGrid();
+            LoadUsers();
         }
 
         protected void gvUsers_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            GridViewRow row = gvUsers.Rows[e.RowIndex];
-            int userId = Convert.ToInt32(gvUsers.DataKeys[e.RowIndex].Value);
-
-            string newUsername = ((TextBox)row.FindControl("txtUsername")).Text.Trim();
-            string newEmail = ((TextBox)row.FindControl("txtEmail")).Text.Trim();
-            string newGender = ((DropDownList)row.FindControl("ddlGender")).SelectedValue;
-
-            Label lblUsernameError = (Label)row.FindControl("lblUsernameError");
-            Label lblEmailError = (Label)row.FindControl("lblEmailError");
-
-            lblUsernameError.Visible = false;
-            lblEmailError.Visible = false;
-
-            // Validate Username uniqueness
-            if (UsernameExists(newUsername, userId))
+            try
             {
-                lblUsernameError.Text = "Username already exists.";
-                lblUsernameError.Visible = true;
-                return;
-            }
+                GridViewRow row = gvUsers.Rows[e.RowIndex];
+                int userId = Convert.ToInt32(gvUsers.DataKeys[e.RowIndex].Value);
 
-            // Validate email format regex
-            if (!Regex.IsMatch(newEmail, @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"))
-            {
-                lblEmailError.Text = "Invalid email format.";
-                lblEmailError.Visible = true;
-                return;
-            }
+                // Get the updated values
+                TextBox txtUsername = row.FindControl("txtUsername") as TextBox;
+                TextBox txtEmail = row.FindControl("txtEmail") as TextBox;
+                DropDownList ddlGender = row.FindControl("ddlGender") as DropDownList;
 
-            // Validate email uniqueness
-            if (EmailExists(newEmail, userId))
-            {
-                lblEmailError.Text = "Email already exists.";
-                lblEmailError.Visible = true;
-                return;
-            }
+                // Get error labels
+                Label lblUsernameError = row.FindControl("lblUsernameError") as Label;
+                Label lblEmailError = row.FindControl("lblEmailError") as Label;
 
-            // Update DB
-            using (SqlConnection conn = new SqlConnection(connStr))
-            {
-                string sql = "UPDATE UserDetails SET Username=@Username, Email=@Email, Gender=@Gender WHERE Id=@Id";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@Username", newUsername);
-                cmd.Parameters.AddWithValue("@Email", newEmail);
-                cmd.Parameters.AddWithValue("@Gender", newGender);
-                cmd.Parameters.AddWithValue("@Id", userId);
+                bool hasError = false;
 
-                conn.Open();
-                int rows = cmd.ExecuteNonQuery();
-                conn.Close();
-
-                if (rows > 0)
+                // Validate username
+                if (string.IsNullOrWhiteSpace(txtUsername.Text))
                 {
-                    lblMessage.ForeColor = System.Drawing.Color.Green;
-                    lblMessage.Text = "User updated successfully.";
+                    lblUsernameError.Text = "Username is required.";
+                    lblUsernameError.Visible = true;
+                    hasError = true;
                 }
                 else
                 {
-                    lblMessage.ForeColor = System.Drawing.Color.Red;
-                    lblMessage.Text = "Error updating user.";
+                    // Check if username already exists (excluding current user)
+                    if (IsUsernameExists(txtUsername.Text.Trim(), userId))
+                    {
+                        lblUsernameError.Text = "Username already exists.";
+                        lblUsernameError.Visible = true;
+                        hasError = true;
+                    }
+                    else
+                    {
+                        lblUsernameError.Visible = false;
+                    }
+                }
+
+                // Validate email
+                if (string.IsNullOrWhiteSpace(txtEmail.Text))
+                {
+                    lblEmailError.Text = "Email is required.";
+                    lblEmailError.Visible = true;
+                    hasError = true;
+                }
+                else if (!IsValidEmail(txtEmail.Text.Trim()))
+                {
+                    lblEmailError.Text = "Invalid email format.";
+                    lblEmailError.Visible = true;
+                    hasError = true;
+                }
+                else
+                {
+                    // Check if email already exists (excluding current user)
+                    if (IsEmailExists(txtEmail.Text.Trim(), userId))
+                    {
+                        lblEmailError.Text = "Email already exists.";
+                        lblEmailError.Visible = true;
+                        hasError = true;
+                    }
+                    else
+                    {
+                        lblEmailError.Visible = false;
+                    }
+                }
+
+                if (hasError)
+                {
+                    return; // Don't proceed with update
+                }
+
+                // Update the user
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = @"
+                        UPDATE UserDetails 
+                        SET Username = @Username, Email = @Email, Gender = @Gender 
+                        WHERE Id = @Id";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@Username", txtUsername.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Gender", ddlGender.SelectedValue);
+                    cmd.Parameters.AddWithValue("@Id", userId);
+
+                    int result = cmd.ExecuteNonQuery();
+
+                    if (result > 0)
+                    {
+                        gvUsers.EditIndex = -1;
+                        LoadUsers();
+                        ShowMessage("User updated successfully!", false);
+                    }
+                    else
+                    {
+                        ShowMessage("Error updating user.", true);
+                    }
                 }
             }
-
-            gvUsers.EditIndex = -1;
-            BindGrid();
-        }
-
-        private bool UsernameExists(string username, int currentUserId)
-        {
-            using (SqlConnection conn = new SqlConnection(connStr))
+            catch (Exception ex)
             {
-                // Only check among regular users (RoleId = 1), exclude admin users
-                string sql = "SELECT COUNT(*) FROM UserDetails WHERE Username=@Username AND Id<>@Id AND RoleId = 1";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@Username", username);
-                cmd.Parameters.AddWithValue("@Id", currentUserId);
-                conn.Open();
-                int count = (int)cmd.ExecuteScalar();
-                conn.Close();
-                return count > 0;
-            }
-        }
-
-        private bool EmailExists(string email, int currentUserId)
-        {
-            using (SqlConnection conn = new SqlConnection(connStr))
-            {
-                // Only check among regular users (RoleId = 1), exclude admin users
-                string sql = "SELECT COUNT(*) FROM UserDetails WHERE Email=@Email AND Id<>@Id AND RoleId = 1";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@Email", email);
-                cmd.Parameters.AddWithValue("@Id", currentUserId);
-                conn.Open();
-                int count = (int)cmd.ExecuteScalar();
-                conn.Close();
-                return count > 0;
+                ShowMessage("Error updating user: " + ex.Message, true);
             }
         }
 
         protected void gvUsers_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            int userId = Convert.ToInt32(gvUsers.DataKeys[e.RowIndex].Value);
-
-            using (SqlConnection conn = new SqlConnection(connStr))
+            try
             {
-                string sql = "DELETE FROM UserDetails WHERE Id=@Id";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@Id", userId);
+                int userId = Convert.ToInt32(gvUsers.DataKeys[e.RowIndex].Value);
 
-                conn.Open();
-                int rows = cmd.ExecuteNonQuery();
-                conn.Close();
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
 
-                if (rows > 0)
-                {
-                    lblMessage.ForeColor = System.Drawing.Color.Green;
-                    lblMessage.Text = "User deleted successfully.";
-                }
-                else
-                {
-                    lblMessage.ForeColor = System.Drawing.Color.Red;
-                    lblMessage.Text = "Error deleting user.";
+                    // First, delete related activity records
+                    SqlCommand deleteActivityCmd = new SqlCommand(
+                        "DELETE FROM UserActivityTracking WHERE UserId = @UserId", conn);
+                    deleteActivityCmd.Parameters.AddWithValue("@UserId", userId);
+                    deleteActivityCmd.ExecuteNonQuery();
+
+                    // Then delete the user
+                    SqlCommand deleteUserCmd = new SqlCommand(
+                        "DELETE FROM UserDetails WHERE Id = @Id", conn);
+                    deleteUserCmd.Parameters.AddWithValue("@Id", userId);
+
+                    int result = deleteUserCmd.ExecuteNonQuery();
+
+                    if (result > 0)
+                    {
+                        LoadUsers();
+                        ShowMessage("User deleted successfully!", false);
+                    }
+                    else
+                    {
+                        ShowMessage("Error deleting user.", true);
+                    }
                 }
             }
-
-            BindGrid();
+            catch (Exception ex)
+            {
+                ShowMessage("Error deleting user: " + ex.Message, true);
+            }
         }
 
         protected void gvUsers_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvUsers.PageIndex = e.NewPageIndex;
-            BindGrid();
+            LoadUsers();
         }
 
         protected void gvUsers_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            if (e.Row.RowType == DataControlRowType.DataRow)
+            // To highlight the row in edit mode
+            if (e.Row.RowType == DataControlRowType.DataRow && e.Row.RowIndex == gvUsers.EditIndex)
             {
-                // Highlight edited row
-                if ((e.Row.RowState & DataControlRowState.Edit) > 0)
-                {
-                    e.Row.CssClass = "edit-row";
-                }
+                e.Row.CssClass = "edit-row";
             }
+        }
 
-            if ((e.Row.RowState & DataControlRowState.Edit) > 0)
+        private bool IsUsernameExists(string username, int excludeUserId)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                DropDownList ddlGender = (DropDownList)e.Row.FindControl("ddlGender");
-                if (ddlGender != null)
-                {
-                    string gender = DataBinder.Eval(e.Row.DataItem, "Gender").ToString();
-                    ddlGender.SelectedValue = gender;
-                }
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM UserDetails WHERE Username = @Username AND Id != @Id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Username", username);
+                cmd.Parameters.AddWithValue("@Id", excludeUserId);
+
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0;
             }
+        }
+
+        private bool IsEmailExists(string email, int excludeUserId)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM UserDetails WHERE Email = @Email AND Id != @Id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Email", email);
+                cmd.Parameters.AddWithValue("@Id", excludeUserId);
+
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0;
+            }
+        }
+
+        private bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
+            try
+            {
+                // Use simple regex for email validation
+                string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+                return Regex.IsMatch(email, pattern);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private void ShowMessage(string message, bool isError)
+        {
+            lblMessage.Text = message;
+            lblMessage.CssClass = isError ? "alert alert-danger" : "alert alert-success";
+            lblMessage.Visible = true;
         }
     }
 }

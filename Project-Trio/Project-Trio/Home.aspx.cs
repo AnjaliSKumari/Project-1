@@ -1,150 +1,8 @@
-﻿//using System;
-//using System.Configuration;
-//using System.Data.SqlClient;
-
-//namespace Project_Trio
-//{
-//    public partial class Home : System.Web.UI.Page
-//    {
-//        string connStr = ConfigurationManager.ConnectionStrings["UserConn"].ConnectionString;
-
-//        protected void Page_Load(object sender, EventArgs e)
-//        {
-
-
-//            if (Session["UserId"] == null)
-//            {
-//                Response.Redirect("Login.aspx");
-//            }
-
-//            if (!IsPostBack)
-//            {
-//                lblWelcome.Text = Session["Username"]?.ToString() ?? "User";
-//            }
-//        }
-
-//        protected void imgUserIcon_Click(object sender, EventArgs e)
-//        {
-//            LoadUserProfile();
-//            pnlProfile.Visible = true;
-//        }
-
-//        private void LoadUserProfile()
-//        {
-//            int userId = Convert.ToInt32(Session["UserId"]);
-//            using (SqlConnection conn = new SqlConnection(connStr))
-//            {
-//                conn.Open();
-//                SqlCommand cmd = new SqlCommand("SELECT Username, Email, Gender FROM UserDetails WHERE Id = @UserId", conn);
-//                cmd.Parameters.AddWithValue("@UserId", userId);
-
-//                SqlDataReader reader = cmd.ExecuteReader();
-//                if (reader.Read())
-//                {
-//                    txtUsername.Text = reader["Username"].ToString();
-//                    txtEmail.Text = reader["Email"].ToString();
-//                    string gender = reader["Gender"].ToString();
-//                    ddlGender.SelectedValue = gender == "Male" || gender == "Female" ? gender : "";
-//                }
-//                reader.Close();
-//            }
-
-//            SetEditing(false);
-//            lblMessage.Visible = false;
-//        }
-
-//        private void SetEditing(bool isEditing)
-//        {    txtUsername.ReadOnly = !isEditing;
-//            txtEmail.ReadOnly = !isEditing;
-//            ddlGender.Enabled = isEditing;
-//            btnSave.Visible = isEditing;
-//            btnCancel.Visible = isEditing;
-//            btnEdit.Visible = !isEditing;
-//        }
-
-//        protected void btnEdit_Click(object sender, EventArgs e)
-//        {
-//            SetEditing(true);
-//        }
-
-//        protected void btnCancel_Click(object sender, EventArgs e)
-//        {
-//            LoadUserProfile(); // reload original data and disable editing
-//        }
-
-//        protected void btnSave_Click(object sender, EventArgs e)
-//        {
-//            int userId = Convert.ToInt32(Session["UserId"]);
-//            string newUsername = txtUsername.Text.Trim();
-//            string newEmail = txtEmail.Text.Trim();
-//            string newGender = ddlGender.SelectedValue;
-
-//            using (SqlConnection conn = new SqlConnection(connStr))
-//            {
-//                conn.Open();
-
-//                // Check if username is already taken by another user
-//                SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM UserDetails WHERE Username = @Username AND Id <> @UserId", conn);
-//                checkCmd.Parameters.AddWithValue("@Username", newUsername);
-//                checkCmd.Parameters.AddWithValue("@UserId", userId);
-//                int existingCount = (int)checkCmd.ExecuteScalar();
-
-//                if (existingCount > 0)
-//                {
-//                    lblMessage.Text = "Username already taken, please choose another.";
-//                    lblMessage.ForeColor = System.Drawing.Color.Red;
-//                    lblMessage.Visible = true;
-//                    return; // Stop further execution
-//                }
-
-//                // Update the user details including username
-//                SqlCommand cmd = new SqlCommand("UPDATE UserDetails SET Username = @Username, Email = @Email, Gender = @Gender WHERE Id = @UserId", conn);
-//                cmd.Parameters.AddWithValue("@Username", newUsername);
-//                cmd.Parameters.AddWithValue("@Email", newEmail);
-//                cmd.Parameters.AddWithValue("@Gender", newGender);
-//                cmd.Parameters.AddWithValue("@UserId", userId);
-
-//                int rows = cmd.ExecuteNonQuery();
-
-//                if (rows > 0)
-//                {
-//                    lblMessage.Text = "Profile updated successfully.";
-//                    lblMessage.ForeColor = System.Drawing.Color.Green;
-
-//                    // Update Session username and welcome label
-//                    Session["Username"] = newUsername;
-//                    lblWelcome.Text = newUsername;
-//                }
-//                else
-//                {
-//                    lblMessage.Text = "Failed to update profile.";
-//                    lblMessage.ForeColor = System.Drawing.Color.Red;
-//                }
-
-//                lblMessage.Visible = true;
-//            }
-
-//            SetEditing(false);
-//        }
-
-
-//        // Override btnSave to add confirmation popup with JS
-//        protected override void OnPreRender(EventArgs e)
-//        {
-//            base.OnPreRender(e);
-//            if (btnSave.Visible)
-//            {
-//                btnSave.Attributes["onclick"] = "return confirm('Do you want to save the changes?');";
-//            }
-//        }
-//    }
-//}
-
-//new code
-
-using System;
+﻿using System;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.IO; // IMPORTANT: Add this for Path.GetFileNameWithoutExtension
+using System.Web.UI; // Already there, but ensures it's explicit
 
 namespace Project_Trio
 {
@@ -161,20 +19,27 @@ namespace Project_Trio
                 return;
             }
 
-            // Track home page entry
-            ActivityTracker.TrackPageEntry("Home");
-
+            // --- CRITICAL CHANGE: Tracking should be inside !IsPostBack ---
+            // This ensures activity is logged only when the page is first loaded (GET request),
+            // not on subsequent postbacks (like clicking buttons on the page).
             if (!IsPostBack)
             {
+                string currentPageName = Path.GetFileNameWithoutExtension(Request.Url.AbsolutePath);
+                ActivityTracker.TrackPageActivity(currentPageName);
+
+                // Your existing initial setup for lblWelcome.Text
                 lblWelcome.Text = Session["Username"]?.ToString() ?? "User";
             }
         }
 
-        protected void Page_Unload(object sender, EventArgs e)
-        {
-            // Track home page exit
-            ActivityTracker.TrackPageExit("Home");
-        }
+        // --- REMOVE THE ENTIRE Page_Unload METHOD ---
+        // The Page_Unload method and any calls to TrackPageExit are no longer needed here.
+        // ActivityTracker.TrackPageActivity handles closing the previous page's activity
+        // when a new page is loaded, and Session_End in Global.asax handles session expiry.
+        // protected void Page_Unload(object sender, EventArgs e)
+        // {
+        //     // ActivityTracker.TrackPageExit("Home"); // This line caused the 0-second issues
+        // }
 
         protected void imgUserIcon_Click(object sender, EventArgs e)
         {
@@ -237,7 +102,6 @@ namespace Project_Trio
             {
                 conn.Open();
 
-                // Check if username is already taken by another user
                 SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM UserDetails WHERE Username = @Username AND Id <> @UserId", conn);
                 checkCmd.Parameters.AddWithValue("@Username", newUsername);
                 checkCmd.Parameters.AddWithValue("@UserId", userId);
@@ -248,10 +112,9 @@ namespace Project_Trio
                     lblMessage.Text = "Username already taken, please choose another.";
                     lblMessage.ForeColor = System.Drawing.Color.Red;
                     lblMessage.Visible = true;
-                    return; // Stop further execution
+                    return;
                 }
 
-                // Update the user details including username
                 SqlCommand cmd = new SqlCommand("UPDATE UserDetails SET Username = @Username, Email = @Email, Gender = @Gender WHERE Id = @UserId", conn);
                 cmd.Parameters.AddWithValue("@Username", newUsername);
                 cmd.Parameters.AddWithValue("@Email", newEmail);
@@ -265,9 +128,8 @@ namespace Project_Trio
                     lblMessage.Text = "Profile updated successfully.";
                     lblMessage.ForeColor = System.Drawing.Color.Green;
 
-                    // Update Session username and welcome label
-                    Session["Username"] = newUsername;
-                    lblWelcome.Text = newUsername;
+                    Session["Username"] = newUsername; // Update session with new username
+                    lblWelcome.Text = newUsername; // Update welcome label
                 }
                 else
                 {
@@ -281,37 +143,20 @@ namespace Project_Trio
             SetEditing(false);
         }
 
-        // Override btnSave to add confirmation popup with JS
-        protected override void OnPreRender(EventArgs e)
-        {
-            base.OnPreRender(e);
-            if (btnSave.Visible)
-            {
-                btnSave.Attributes["onclick"] = "return confirm('Do you want to save the changes?');";
-            }
-        }
-
-        // New method: Logout functionality with activity tracking
         protected void btnLogout_Click(object sender, EventArgs e)
         {
-            // Track all page exits before logout
-            ActivityTracker.TrackAllPageExits();
+            // This tracks the exit of the LAST active page for the current session.
+            ActivityTracker.TrackCurrentPageExitOnSessionEnd();
 
-            // Clear session
             Session.Clear();
             Session.Abandon();
-
-            // Redirect to login
+            Response.Cookies["ASP.NET_SessionId"].Expires = DateTime.Now.AddDays(-1);
             Response.Redirect("Login.aspx");
         }
 
-        // New method: Navigation to Dashboard with activity tracking
         protected void btnGoToDashboard_Click(object sender, EventArgs e)
         {
-            // Track exit from home page
-            ActivityTracker.TrackPageExit("Home");
-
-            // Redirect to dashboard
+            // No explicit tracking needed here; Dashboard.aspx's Page_Load will handle it.
             Response.Redirect("Dashboard.aspx");
         }
     }

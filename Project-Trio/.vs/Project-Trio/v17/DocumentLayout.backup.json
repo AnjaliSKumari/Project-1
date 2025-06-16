@@ -1,78 +1,54 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\",
+  "WorkspaceRootPath": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|c:\\users\\e40096633\\source\\project-1\\project-trio\\project-trio\\dashboard.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\project-trio\\dashboard.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\dashboard.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|c:\\users\\e40096633\\source\\project-1\\project-trio\\project-trio\\dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|c:\\users\\e40098016\\onedrive - rtx\\project-1\\project-trio\\project-trio\\project-trio\\dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|c:\\users\\e40096633\\source\\project-1\\project-trio\\project-trio\\activitytracker.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\activitytracker.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|c:\\users\\e40096633\\source\\project-1\\project-trio\\project-trio\\home.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\home.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|c:\\users\\e40096633\\source\\project-1\\project-trio\\project-trio\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\project-trio\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|c:\\users\\e40096633\\source\\project-1\\project-trio\\project-trio\\signup.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\signup.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|c:\\users\\e40096633\\source\\project-1\\project-trio\\project-trio\\activitytracker.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\activitytracker.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|c:\\users\\e40096633\\source\\project-1\\project-trio\\project-trio\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|c:\\users\\e40096633\\source\\project-1\\project-trio\\project-trio\\home.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\home.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|c:\\users\\e40096633\\source\\project-1\\project-trio\\project-trio\\useractivity.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\useractivity.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|c:\\users\\e40096633\\source\\project-1\\project-trio\\project-trio\\useractivity.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\project-trio\\useractivity.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\useractivity.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|c:\\users\\e40096633\\source\\project-1\\project-trio\\project-trio\\adminpanel.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\adminpanel.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\project-trio\\useractivity.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\useractivity.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|c:\\users\\e40096633\\source\\project-1\\project-trio\\project-trio\\adminpanel.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\project-trio\\signup.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\signup.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\project-trio\\activitytracker.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\activitytracker.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\project-trio\\adminpanel.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\adminpanel.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\project-trio\\userlist.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\userlist.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\project-trio\\home.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\home.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\project-trio\\signup.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\project-trio\\home.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\home.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\project-trio\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\project-trio\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\project-trio\\signup.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\signup.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\project-trio\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\project-trio\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{B51CFC1C-7702-42E0-B67A-899CCEE36350}|Project-Trio\\Project-Trio.csproj|solutionrelative:project-trio\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,35 +58,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 13,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "SignUp.aspx",
-              "DocumentMoniker": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\SignUp.aspx",
-              "RelativeDocumentMoniker": "Project-Trio\\SignUp.aspx",
-              "ToolTip": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\SignUp.aspx",
-              "RelativeToolTip": "Project-Trio\\SignUp.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-05-29T10:30:54.606Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SignUp.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\SignUp.aspx.cs",
-              "RelativeDocumentMoniker": "Project-Trio\\SignUp.aspx.cs",
-              "ToolTip": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\SignUp.aspx.cs",
-              "RelativeToolTip": "Project-Trio\\SignUp.aspx.cs",
-              "ViewState": "AgIAAPwAAAAAAAAAAAAAABgBAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T10:32:27.079Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",
@@ -119,209 +71,148 @@
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "Global.asax.cs",
-              "DocumentMoniker": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\Global.asax.cs",
-              "RelativeDocumentMoniker": "Project-Trio\\Global.asax.cs",
-              "ToolTip": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\Global.asax.cs",
-              "RelativeToolTip": "Project-Trio\\Global.asax.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAwwDEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T06:45:33.18Z",
-              "EditorCaption": ""
+              "Title": "Home.aspx",
+              "DocumentMoniker": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\Home.aspx",
+              "RelativeDocumentMoniker": "Project-Trio\\Home.aspx",
+              "ToolTip": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\Home.aspx",
+              "RelativeToolTip": "Project-Trio\\Home.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-11T17:04:27.319Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Dashboard.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\Dashboard.aspx.cs",
-              "RelativeDocumentMoniker": "Project-Trio\\Dashboard.aspx.cs",
-              "ToolTip": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\Dashboard.aspx.cs",
-              "RelativeToolTip": "Project-Trio\\Dashboard.aspx.cs",
-              "ViewState": "AgIAAOYCAAAAAAAAAAAAAPMCAAABAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "Login.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\Login.aspx.cs",
+              "RelativeDocumentMoniker": "Project-Trio\\Login.aspx.cs",
+              "ToolTip": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\Login.aspx.cs",
+              "RelativeToolTip": "Project-Trio\\Login.aspx.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAADwv2wAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T06:32:13.044Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-11T16:53:36.372Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ActivityTracker.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\ActivityTracker.aspx.cs",
-              "RelativeDocumentMoniker": "Project-Trio\\ActivityTracker.aspx.cs",
-              "ToolTip": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\ActivityTracker.aspx.cs",
-              "RelativeToolTip": "Project-Trio\\ActivityTracker.aspx.cs",
-              "ViewState": "AgIAAAcBAAAAAAAAAAAowDYBAAABAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "SignUp.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\SignUp.aspx.cs",
+              "RelativeDocumentMoniker": "Project-Trio\\SignUp.aspx.cs",
+              "ToolTip": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\SignUp.aspx.cs",
+              "RelativeToolTip": "Project-Trio\\SignUp.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJgAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T06:29:46.32Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-11T16:49:41.481Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "ActivityTracker.aspx",
-              "DocumentMoniker": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\ActivityTracker.aspx",
-              "RelativeDocumentMoniker": "Project-Trio\\ActivityTracker.aspx",
-              "ToolTip": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\ActivityTracker.aspx",
-              "RelativeToolTip": "Project-Trio\\ActivityTracker.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-06-04T06:29:40.194Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UserActivity.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\UserActivity.aspx.cs",
-              "RelativeDocumentMoniker": "Project-Trio\\UserActivity.aspx.cs",
-              "ToolTip": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\UserActivity.aspx.cs",
-              "RelativeToolTip": "Project-Trio\\UserActivity.aspx.cs",
-              "ViewState": "AgIAALEAAAAAAAAAAAAuwOMAAAABAAAAAAAAAA==",
+              "Title": "Home.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\Home.aspx.cs",
+              "RelativeDocumentMoniker": "Project-Trio\\Home.aspx.cs",
+              "ToolTip": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\Home.aspx.cs",
+              "RelativeToolTip": "Project-Trio\\Home.aspx.cs",
+              "ViewState": "AgIAAIsAAAAAAAAAAADwv5QAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T05:17:08.693Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-11T11:50:29.842Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
+              "Title": "Global.asax.cs",
+              "DocumentMoniker": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\Global.asax.cs",
+              "RelativeDocumentMoniker": "Project-Trio\\Global.asax.cs",
+              "ToolTip": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\Global.asax.cs",
+              "RelativeToolTip": "Project-Trio\\Global.asax.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAuwCIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T11:38:31.306Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ActivityTracker.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\ActivityTracker.aspx.cs",
+              "RelativeDocumentMoniker": "Project-Trio\\ActivityTracker.aspx.cs",
+              "ToolTip": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\ActivityTracker.aspx.cs",
+              "RelativeToolTip": "Project-Trio\\ActivityTracker.aspx.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAgwEIAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T09:16:37.408Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserActivity.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\UserActivity.aspx.cs",
+              "RelativeDocumentMoniker": "Project-Trio\\UserActivity.aspx.cs",
+              "ToolTip": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\UserActivity.aspx.cs",
+              "RelativeToolTip": "Project-Trio\\UserActivity.aspx.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAIsAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T07:09:51.488Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AdminPanel.aspx",
+              "DocumentMoniker": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\AdminPanel.aspx",
+              "RelativeDocumentMoniker": "Project-Trio\\AdminPanel.aspx",
+              "ToolTip": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\AdminPanel.aspx",
+              "RelativeToolTip": "Project-Trio\\AdminPanel.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-11T05:44:17.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "UserActivity.aspx",
-              "DocumentMoniker": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\UserActivity.aspx",
+              "DocumentMoniker": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\UserActivity.aspx",
               "RelativeDocumentMoniker": "Project-Trio\\UserActivity.aspx",
-              "ToolTip": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\UserActivity.aspx",
+              "ToolTip": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\UserActivity.aspx",
               "RelativeToolTip": "Project-Trio\\UserActivity.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-06-04T03:21:41.333Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-11T05:43:08.972Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Dashboard.aspx",
-              "DocumentMoniker": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\Dashboard.aspx",
+              "DocumentMoniker": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\Dashboard.aspx",
               "RelativeDocumentMoniker": "Project-Trio\\Dashboard.aspx",
-              "ToolTip": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\Dashboard.aspx",
+              "ToolTip": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\Dashboard.aspx",
               "RelativeToolTip": "Project-Trio\\Dashboard.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-06-04T03:21:17.127Z",
+              "WhenOpened": "2025-06-10T17:43:15.454Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Home.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\Home.aspx.cs",
-              "RelativeDocumentMoniker": "Project-Trio\\Home.aspx.cs",
-              "ToolTip": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\Home.aspx.cs",
-              "RelativeToolTip": "Project-Trio\\Home.aspx.cs",
-              "ViewState": "AgIAABgBAAAAAAAAAAAAADoBAAAwAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "SignUp.aspx",
+              "DocumentMoniker": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\SignUp.aspx",
+              "RelativeDocumentMoniker": "Project-Trio\\SignUp.aspx",
+              "ToolTip": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\SignUp.aspx",
+              "RelativeToolTip": "Project-Trio\\SignUp.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-10T11:21:25.211Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Dashboard.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\Dashboard.aspx.cs",
+              "RelativeDocumentMoniker": "Project-Trio\\Dashboard.aspx.cs",
+              "ToolTip": "C:\\Users\\E40098016\\OneDrive - RTX\\Project-1\\Project-Trio\\Project-Trio\\Project-Trio\\Dashboard.aspx.cs",
+              "RelativeToolTip": "Project-Trio\\Dashboard.aspx.cs",
+              "ViewState": "AgIAAJgDAAAAAAAAAAAgwIUEAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T02:15:40.397Z",
+              "WhenOpened": "2025-06-04T06:32:13.044Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Home.aspx",
-              "DocumentMoniker": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\Home.aspx",
-              "RelativeDocumentMoniker": "Project-Trio\\Home.aspx",
-              "ToolTip": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\Home.aspx",
-              "RelativeToolTip": "Project-Trio\\Home.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-06-04T02:15:27.332Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AdminPanel.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\AdminPanel.aspx.cs",
-              "RelativeDocumentMoniker": "Project-Trio\\AdminPanel.aspx.cs",
-              "ToolTip": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\AdminPanel.aspx.cs",
-              "RelativeToolTip": "Project-Trio\\AdminPanel.aspx.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAQwCgAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T02:13:11.319Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AdminPanel.aspx",
-              "DocumentMoniker": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\AdminPanel.aspx",
-              "RelativeDocumentMoniker": "Project-Trio\\AdminPanel.aspx",
-              "ToolTip": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\AdminPanel.aspx",
-              "RelativeToolTip": "Project-Trio\\AdminPanel.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-06-04T02:12:25.126Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Login.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\Login.aspx.cs",
-              "RelativeDocumentMoniker": "Project-Trio\\Login.aspx.cs",
-              "ToolTip": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\Login.aspx.cs",
-              "RelativeToolTip": "Project-Trio\\Login.aspx.cs",
-              "ViewState": "AgIAAIIAAAAAAAAAAAAAAK0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T02:10:49.19Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "UserList.aspx",
-              "DocumentMoniker": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\UserList.aspx",
-              "RelativeDocumentMoniker": "Project-Trio\\UserList.aspx",
-              "ToolTip": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\UserList.aspx",
-              "RelativeToolTip": "Project-Trio\\UserList.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-06-02T06:54:25.955Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Login.aspx",
-              "DocumentMoniker": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\Login.aspx",
-              "RelativeDocumentMoniker": "Project-Trio\\Login.aspx",
-              "ToolTip": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\Login.aspx",
-              "RelativeToolTip": "Project-Trio\\Login.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-05-29T12:31:18.25Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Web.config",
-              "DocumentMoniker": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\Web.config",
-              "RelativeDocumentMoniker": "Project-Trio\\Web.config",
-              "ToolTip": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\Web.config",
-              "RelativeToolTip": "Project-Trio\\Web.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-05-29T12:09:40.59Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "style.css",
-              "DocumentMoniker": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\style.css",
-              "RelativeDocumentMoniker": "Project-Trio\\style.css",
-              "ToolTip": "C:\\Users\\E40096633\\source\\Project-1\\Project-Trio\\Project-Trio\\style.css",
-              "RelativeToolTip": "Project-Trio\\style.css",
-              "ViewState": "AgIAABsBAAAAAAAAAAAAAKMBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-29T11:56:07.529Z"
             }
           ]
         }

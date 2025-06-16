@@ -1,149 +1,4 @@
-﻿//using System;
-//using System.Configuration;
-//using System.Data.SqlClient;
-//using System.Web;
-
-//namespace Project_Trio
-//{
-//    public partial class ActivityTracker
-//    {
-//        private static string GetConnectionString()
-//        {
-//            return ConfigurationManager.ConnectionStrings["UserConn"].ConnectionString;
-//        }
-
-//        /// <summary>
-//        /// Track when user enters a page
-//        /// </summary>
-//        public static void TrackPageEntry(string pageName)
-//        {
-//            if (HttpContext.Current.Session["UserId"] == null)
-//                return;
-
-//            int userId = Convert.ToInt32(HttpContext.Current.Session["UserId"]);
-//            string username = HttpContext.Current.Session["Username"]?.ToString() ?? "";
-//            string sessionId = HttpContext.Current.Session.SessionID;
-
-//            try
-//            {
-//                using (SqlConnection conn = new SqlConnection(GetConnectionString()))
-//                {
-//                    conn.Open();
-
-//                    // First, get user details
-//                    string getUserQuery = "SELECT Email, CreatedAt FROM UserDetails WHERE Id = @UserId";
-//                    SqlCommand getUserCmd = new SqlCommand(getUserQuery, conn);
-//                    getUserCmd.Parameters.AddWithValue("@UserId", userId);
-
-//                    string email = "";
-//                    DateTime userCreatedAt = DateTime.Now;
-
-//                    SqlDataReader reader = getUserCmd.ExecuteReader();
-//                    if (reader.Read())
-//                    {
-//                        email = reader["Email"].ToString();
-//                        userCreatedAt = Convert.ToDateTime(reader["CreatedAt"]);
-//                    }
-//                    reader.Close();
-
-//                    // Insert tracking record
-//                    string insertQuery = @"
-//                        INSERT INTO UserActivityTracking 
-//                        (UserId, Username, Email, UserCreatedAt, PageName, EntryTime, SessionId)
-//                        VALUES (@UserId, @Username, @Email, @UserCreatedAt, @PageName, @EntryTime, @SessionId)";
-
-//                    SqlCommand insertCmd = new SqlCommand(insertQuery, conn);
-//                    insertCmd.Parameters.AddWithValue("@UserId", userId);
-//                    insertCmd.Parameters.AddWithValue("@Username", username);
-//                    insertCmd.Parameters.AddWithValue("@Email", email);
-//                    insertCmd.Parameters.AddWithValue("@UserCreatedAt", userCreatedAt);
-//                    insertCmd.Parameters.AddWithValue("@PageName", pageName);
-//                    insertCmd.Parameters.AddWithValue("@EntryTime", DateTime.Now);
-//                    insertCmd.Parameters.AddWithValue("@SessionId", sessionId);
-
-//                    insertCmd.ExecuteNonQuery();
-
-//                    // Store the tracking ID in session for exit tracking
-//                    HttpContext.Current.Session[$"TrackingId_{pageName}"] = GetLastTrackingId(conn, userId, pageName);
-//                }
-//            }
-//            catch (Exception ex)
-//            {
-//                // Log error (implement logging as needed)
-//                System.Diagnostics.Debug.WriteLine($"Error tracking page entry: {ex.Message}");
-//            }
-//        }
-
-//        /// <summary>
-//        /// Track when user exits a page
-//        /// </summary>
-//        public static void TrackPageExit(string pageName)
-//        {
-//            if (HttpContext.Current.Session["UserId"] == null)
-//                return;
-
-//            string trackingIdKey = $"TrackingId_{pageName}";
-//            if (HttpContext.Current.Session[trackingIdKey] == null)
-//                return;
-
-//            int trackingId = Convert.ToInt32(HttpContext.Current.Session[trackingIdKey]);
-
-//            try
-//            {
-//                using (SqlConnection conn = new SqlConnection(GetConnectionString()))
-//                {
-//                    conn.Open();
-
-//                    string updateQuery = "UPDATE UserActivityTracking SET ExitTime = @ExitTime WHERE Id = @TrackingId";
-//                    SqlCommand updateCmd = new SqlCommand(updateQuery, conn);
-//                    updateCmd.Parameters.AddWithValue("@ExitTime", DateTime.Now);
-//                    updateCmd.Parameters.AddWithValue("@TrackingId", trackingId);
-
-//                    updateCmd.ExecuteNonQuery();
-//                }
-
-//                // Clear from session
-//                HttpContext.Current.Session.Remove(trackingIdKey);
-//            }
-//            catch (Exception ex)
-//            {
-//                // Log error (implement logging as needed)
-//                System.Diagnostics.Debug.WriteLine($"Error tracking page exit: {ex.Message}");
-//            }
-//        }
-
-//        /// <summary>
-//        /// Track page exit for all pages when session ends or user logs out
-//        /// </summary>
-//        public static void TrackAllPageExits()
-//        {
-//            string[] pages = { "Login", "Signup", "Home", "Dashboard" };
-//            foreach (string page in pages)
-//            {
-//                TrackPageExit(page);
-//            }
-//        }
-
-//        private static int GetLastTrackingId(SqlConnection conn, int userId, string pageName)
-//        {
-//            string query = @"
-//                SELECT TOP 1 Id FROM UserActivityTracking 
-//                WHERE UserId = @UserId AND PageName = @PageName 
-//                ORDER BY EntryTime DESC";
-
-//            SqlCommand cmd = new SqlCommand(query, conn);
-//            cmd.Parameters.AddWithValue("@UserId", userId);
-//            cmd.Parameters.AddWithValue("@PageName", pageName);
-
-//            object result = cmd.ExecuteScalar();
-//            return result != null ? Convert.ToInt32(result) : 0;
-//        }
-//    }
-//}
-
-
-//new code
-using System;
+﻿using System;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Web;
@@ -158,154 +13,129 @@ namespace Project_Trio
         }
 
         /// <summary>
-        /// Track when user enters a page (excludes admin users and dashboard)
+        /// Private helper to update the ExitTime for a given tracking ID.
         /// </summary>
-        public static void TrackPageEntry(string pageName)
+        private static void UpdateExistingActivityExitTime(int trackingId, DateTime exitTime)
         {
-            if (HttpContext.Current.Session["UserId"] == null)
-                return;
-
-            // Skip tracking for Dashboard page
-            if (pageName.Equals("Dashboard", StringComparison.OrdinalIgnoreCase))
-                return;
-
-            int userId = Convert.ToInt32(HttpContext.Current.Session["UserId"]);
-            int roleId = HttpContext.Current.Session["RoleId"] != null ?
-                        Convert.ToInt32(HttpContext.Current.Session["RoleId"]) : 1;
-
-            // Skip tracking for admin users (RoleId = 2)
-            if (roleId == 2)
-                return;
-
-            string username = HttpContext.Current.Session["Username"]?.ToString() ?? "";
-            string sessionId = HttpContext.Current.Session.SessionID;
-
             try
             {
                 using (SqlConnection conn = new SqlConnection(GetConnectionString()))
                 {
                     conn.Open();
+                    // Only update if ExitTime is NULL to prevent overwriting genuine exit times
+                    string updateQuery = "UPDATE UserActivityTracking SET ExitTime = @ExitTime WHERE Id = @TrackingId AND ExitTime IS NULL";
+                    SqlCommand updateCmd = new SqlCommand(updateQuery, conn);
+                    updateCmd.Parameters.AddWithValue("@ExitTime", exitTime);
+                    updateCmd.Parameters.AddWithValue("@TrackingId", trackingId);
+                    updateCmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error updating ExitTime for TrackingId {trackingId}: {ex.Message}");
+                // In a production app, you'd log this error more robustly.
+            }
+        }
 
-                    // First, get user details
-                    string getUserQuery = "SELECT Email, CreatedAt FROM UserDetails WHERE Id = @UserId";
+        /// <summary>
+        /// This is the primary method to call on Page_Load.
+        /// It closes the previous page's activity and starts a new one for the current page.
+        /// </summary>
+        public static void TrackPageActivity(string currentPageName)
+        {
+            HttpContext currentContext = HttpContext.Current;
+
+            if (currentContext.Session["UserId"] == null)
+                return; // Not logged in, no tracking
+
+            // Skip tracking for Dashboard and Admin roles
+            if (currentPageName.Equals("Dashboard", StringComparison.OrdinalIgnoreCase))
+                return;
+
+            int userId = Convert.ToInt32(currentContext.Session["UserId"]);
+            int roleId = currentContext.Session["RoleId"] != null ? Convert.ToInt32(currentContext.Session["RoleId"]) : 1;
+
+            if (roleId == 2) // Skip tracking for admin users (RoleId = 2)
+                return;
+
+            string sessionId = currentContext.Session.SessionID;
+            DateTime now = DateTime.Now; // Capture current time once for consistency
+
+            try
+            {
+                // STEP 1: Handle ExitTime for the PREVIOUSLY visited page (if any)
+                // We'll store the ID of the last active tracking entry in a single session variable
+                object lastActivityIdObj = currentContext.Session["CurrentActivityTrackingId"];
+
+                if (lastActivityIdObj != null)
+                {
+                    int lastActivityId = Convert.ToInt32(lastActivityIdObj);
+                    UpdateExistingActivityExitTime(lastActivityId, now); // Set previous page's ExitTime
+                }
+
+                // STEP 2: Insert new tracking record for the CURRENT page entry
+                using (SqlConnection conn = new SqlConnection(GetConnectionString()))
+                {
+                    conn.Open();
+
+                    // Fetch UserCreatedAt (existing logic, kept as is)
+                    string getUserQuery = "SELECT CreatedAt FROM UserDetails WHERE Id = @UserId";
                     SqlCommand getUserCmd = new SqlCommand(getUserQuery, conn);
                     getUserCmd.Parameters.AddWithValue("@UserId", userId);
-
-                    string email = "";
                     DateTime userCreatedAt = DateTime.Now;
-
-                    SqlDataReader reader = getUserCmd.ExecuteReader();
-                    if (reader.Read())
+                    object result = getUserCmd.ExecuteScalar();
+                    if (result != null)
                     {
-                        email = reader["Email"].ToString();
-                        userCreatedAt = Convert.ToDateTime(reader["CreatedAt"]);
+                        userCreatedAt = Convert.ToDateTime(result);
                     }
-                    reader.Close();
 
-                    // Insert tracking record
+                    // --- IMPORTANT CHANGE HERE: ADD ExitTime WITH NULL VALUE ---
                     string insertQuery = @"
                         INSERT INTO UserActivityTracking 
-                        (UserId, Username, Email, UserCreatedAt, PageName, EntryTime, SessionId)
-                        VALUES (@UserId, @Username, @Email, @UserCreatedAt, @PageName, @EntryTime, @SessionId)";
+                        (UserId, Username, Email, UserCreatedAt, PageName, EntryTime, ExitTime, SessionId)
+                        VALUES (@UserId, @Username, @Email, @UserCreatedAt, @PageName, @EntryTime, NULL, @SessionId);
+                        SELECT SCOPE_IDENTITY(); -- Get the ID of the newly inserted row";
 
                     SqlCommand insertCmd = new SqlCommand(insertQuery, conn);
                     insertCmd.Parameters.AddWithValue("@UserId", userId);
-                    insertCmd.Parameters.AddWithValue("@Username", username);
-                    insertCmd.Parameters.AddWithValue("@Email", email);
+                    insertCmd.Parameters.AddWithValue("@Username", currentContext.Session["UserName"] ?? "Unknown");
+                    insertCmd.Parameters.AddWithValue("@Email", currentContext.Session["Email"] ?? "Unknown@example.com");
                     insertCmd.Parameters.AddWithValue("@UserCreatedAt", userCreatedAt);
-                    insertCmd.Parameters.AddWithValue("@PageName", pageName);
-                    insertCmd.Parameters.AddWithValue("@EntryTime", DateTime.Now);
+                    insertCmd.Parameters.AddWithValue("@PageName", currentPageName);
+                    insertCmd.Parameters.AddWithValue("@EntryTime", now);
                     insertCmd.Parameters.AddWithValue("@SessionId", sessionId);
 
-                    insertCmd.ExecuteNonQuery();
+                    // Get the ID of the newly inserted record
+                    int newActivityId = Convert.ToInt32(insertCmd.ExecuteScalar());
 
-                    // Store the tracking ID in session for exit tracking
-                    HttpContext.Current.Session[$"TrackingId_{pageName}"] = GetLastTrackingId(conn, userId, pageName);
+                    // Store this new ID in session for the next page load (to become the 'previous' one)
+                    currentContext.Session["CurrentActivityTrackingId"] = newActivityId;
                 }
             }
             catch (Exception ex)
             {
-                // Log error (implement logging as needed)
-                System.Diagnostics.Debug.WriteLine($"Error tracking page entry: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"Error tracking page activity for {currentPageName}: {ex.Message}");
             }
         }
 
         /// <summary>
-        /// Track when user exits a page (excludes admin users and dashboard)
+        /// This method is specifically for Session_End or explicit Logout.
+        /// It ensures the ExitTime for the very last active page is set.
         /// </summary>
-        public static void TrackPageExit(string pageName)
+        public static void TrackCurrentPageExitOnSessionEnd()
         {
-            if (HttpContext.Current.Session["UserId"] == null)
-                return;
-
-            // Skip tracking for Dashboard page
-            if (pageName.Equals("Dashboard", StringComparison.OrdinalIgnoreCase))
-                return;
-
-            int roleId = HttpContext.Current.Session["RoleId"] != null ?
-                        Convert.ToInt32(HttpContext.Current.Session["RoleId"]) : 1;
-
-            // Skip tracking for admin users (RoleId = 2)
-            if (roleId == 2)
-                return;
-
-            string trackingIdKey = $"TrackingId_{pageName}";
-            if (HttpContext.Current.Session[trackingIdKey] == null)
-                return;
-
-            int trackingId = Convert.ToInt32(HttpContext.Current.Session[trackingIdKey]);
-
-            try
+            HttpContext currentContext = HttpContext.Current;
+            if (currentContext.Session["CurrentActivityTrackingId"] != null)
             {
-                using (SqlConnection conn = new SqlConnection(GetConnectionString()))
-                {
-                    conn.Open();
-
-                    string updateQuery = "UPDATE UserActivityTracking SET ExitTime = @ExitTime WHERE Id = @TrackingId";
-                    SqlCommand updateCmd = new SqlCommand(updateQuery, conn);
-                    updateCmd.Parameters.AddWithValue("@ExitTime", DateTime.Now);
-                    updateCmd.Parameters.AddWithValue("@TrackingId", trackingId);
-
-                    updateCmd.ExecuteNonQuery();
-                }
-
-                // Clear from session
-                HttpContext.Current.Session.Remove(trackingIdKey);
-            }
-            catch (Exception ex)
-            {
-                // Log error (implement logging as needed)
-                System.Diagnostics.Debug.WriteLine($"Error tracking page exit: {ex.Message}");
+                int trackingId = Convert.ToInt32(currentContext.Session["CurrentActivityTrackingId"]);
+                UpdateExistingActivityExitTime(trackingId, DateTime.Now);
+                currentContext.Session.Remove("CurrentActivityTrackingId"); // Clear after use
             }
         }
 
-        /// <summary>
-        /// Track page exit for all pages when session ends or user logs out
-        /// Dashboard removed from tracking list
-        /// </summary>
-        public static void TrackAllPageExits()
-        {
-            // Removed "Dashboard" from the array
-            string[] pages = { "Login", "Signup", "Home" };
-            foreach (string page in pages)
-            {
-                TrackPageExit(page);
-            }
-        }
-
-        private static int GetLastTrackingId(SqlConnection conn, int userId, string pageName)
-        {
-            string query = @"
-                SELECT TOP 1 Id FROM UserActivityTracking 
-                WHERE UserId = @UserId AND PageName = @PageName 
-                ORDER BY EntryTime DESC";
-
-            SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@UserId", userId);
-            cmd.Parameters.AddWithValue("@PageName", pageName);
-
-            object result = cmd.ExecuteScalar();
-            return result != null ? Convert.ToInt32(result) : 0;
-        }
+        // --- REMOVE THESE METHODS IF THEY STILL EXIST ---
+        // public static void TrackPageExit(string pageName) { ... }
+        // public static void TrackAllPageExits() { ... }
+        // private static int GetLastTrackingId(...) { ... }
     }
 }

@@ -17,17 +17,16 @@ namespace Project_Trio
 
         protected void Session_End(object sender, EventArgs e)
         {
-            // Track all page exits when session ends
+            // Call the new method to track the exit time for the currently active page
             try
             {
                 if (Session["UserId"] != null)
                 {
-                    ActivityTracker.TrackAllPageExits();
+                    ActivityTracker.TrackCurrentPageExitOnSessionEnd();
                 }
             }
             catch (Exception ex)
             {
-                // Log error if needed
                 System.Diagnostics.Debug.WriteLine($"Error in Session_End: {ex.Message}");
             }
         }

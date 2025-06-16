@@ -24,6 +24,24 @@ namespace Project_Trio
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// lblUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUsername;
+
+        /// <summary>
+        /// lnkLogout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkLogout;
+
+        /// <summary>
         /// lblWelcome control.
         /// </summary>
         /// <remarks>
@@ -42,31 +60,31 @@ namespace Project_Trio
         protected global::System.Web.UI.WebControls.Label lblTotalUsers;
 
         /// <summary>
-        /// lblActiveToday control.
+        /// lblUsersToday control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblActiveToday;
+        protected global::System.Web.UI.WebControls.Label lblUsersToday;
 
         /// <summary>
-        /// lblTotalSessions control.
+        /// lblActiveUsers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotalSessions;
+        protected global::System.Web.UI.WebControls.Label lblActiveUsers;
 
         /// <summary>
-        /// lblAvgSessionTime control.
+        /// lblTotalLogins control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAvgSessionTime;
+        protected global::System.Web.UI.WebControls.Label lblTotalLogins;
 
         /// <summary>
         /// ddlUsers control.
@@ -78,22 +96,13 @@ namespace Project_Trio
         protected global::System.Web.UI.WebControls.DropDownList ddlUsers;
 
         /// <summary>
-        /// txtDateFrom control.
+        /// ddlActivityType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDateFrom;
-
-        /// <summary>
-        /// txtDateTo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDateTo;
+        protected global::System.Web.UI.WebControls.DropDownList ddlActivityType;
 
         /// <summary>
         /// btnFilter control.
@@ -141,13 +150,40 @@ namespace Project_Trio
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl detailsSection;
 
         /// <summary>
-        /// lblSelectedUser control.
+        /// lblSelectedUserSummary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSelectedUser;
+        protected global::System.Web.UI.WebControls.Label lblSelectedUserSummary;
+
+        /// <summary>
+        /// lblSelectedUserTotalLogins control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSelectedUserTotalLogins;
+
+        /// <summary>
+        /// lblSelectedUserTotalSignups control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSelectedUserTotalSignups;
+
+        /// <summary>
+        /// lblSelectedUserTotalPageViews control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSelectedUserTotalPageViews;
 
         /// <summary>
         /// gvDetailedActivity control.
@@ -157,6 +193,51 @@ namespace Project_Trio
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvDetailedActivity;
+
+        /// <summary>
+        /// lblLoginTimeSpent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLoginTimeSpent;
+
+        /// <summary>
+        /// lblHomeTimeSpent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblHomeTimeSpent;
+
+        /// <summary>
+        /// lblDashboardTimeSpent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDashboardTimeSpent;
+
+        /// <summary>
+        /// lblUserActivityTimeSpent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUserActivityTimeSpent;
+
+        /// <summary>
+        /// gvPageTimeSummary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvPageTimeSummary;
 
         /// <summary>
         /// btnHideDetails control.

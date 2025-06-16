@@ -1,15 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ActivityTracker.aspx.cs" Inherits="Project_Trio.ActivityTracker" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-        </div>
-    </form>
-</body>
-</html>
+﻿<asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
+<br />
+<asp:GridView ID="gvUserActivity" runat="server" AutoGenerateColumns="false" 
+    GridLines="Both" BorderStyle="Solid" Width="100%">
+    <Columns>
+        <asp:BoundField DataField="UserId" HeaderText="User ID" />
+        <asp:BoundField DataField="Username" HeaderText="Username" />
+        <asp:BoundField DataField="Email" HeaderText="Email" />
+        <asp:BoundField DataField="PageName" HeaderText="Page Name" />
+        <asp:BoundField DataField="EntryTime" HeaderText="Entry Time" DataFormatString="{0:G}" />
+        <asp:BoundField DataField="ExitTime" HeaderText="Exit Time" DataFormatString="{0:G}" />
+        <asp:BoundField DataField="TimeSpentMinutes" HeaderText="Time Spent (Minutes)" />
+    </Columns>
+</asp:GridView>
